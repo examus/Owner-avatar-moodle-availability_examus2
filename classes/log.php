@@ -132,8 +132,8 @@ class log {
                     $params[$key.'1'] = $value.'%';
                     $params[$key.'2'] = $value.'%';
 
-                    $email_like = $DB->sql_like("u.email", $key.'1');
-                    $username_like = $DB->sql_like("u.username", $key.'2');
+                    $email_like = $DB->sql_like("u.email", ':'.$key.'1');
+                    $username_like = $DB->sql_like("u.username", ':'.$key.'2');
                     $where[] = "({$email_like} OR {$username_like})";
                     break;
 
